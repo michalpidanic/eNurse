@@ -1,10 +1,14 @@
 import React from 'react';
 
-import Navbar from './components/Navbar/Navbar'
+import Header from './components/Header/Header';
+import MainContent from './components/MainContent/MainContent';
 
 function App() {
   return (
-    <Navbar />
+    <div>
+      <Header />
+      <MainContent />
+    </div>
   );
 }
 

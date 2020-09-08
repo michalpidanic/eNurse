@@ -1,0 +1,13 @@
+.logo {
+    min-height: 63px;
+    max-height: 63px;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

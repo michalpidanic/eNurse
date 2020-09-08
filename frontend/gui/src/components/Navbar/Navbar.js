@@ -28,9 +28,6 @@ export default class Navbar extends Component {
 
         return (
             <nav className="navbar">
-                <h1 className="title">
-                    PF med
-                </h1>
                 {navItems}
             </nav>
         )
