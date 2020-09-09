@@ -5,6 +5,7 @@ import './Navbar.scss'
 import NavItem from '../NavItem/NavItem'
 
 export default class Navbar extends Component {
+
     constructor(props) {
         super(props);
 
