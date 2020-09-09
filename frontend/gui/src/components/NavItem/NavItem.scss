@@ -5,11 +5,14 @@
 
 .navItem:hover {
     border-bottom: 2px solid #3a3a3a;
+    margin-bottom: 8px;
 }
 
 .navItem:active {
     color: gray;
     border-bottom: 2px solid gray;
+    margin-bottom: 8px;
+
 }
 
 .navItemText {
