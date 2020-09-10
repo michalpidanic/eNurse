@@ -7,15 +7,14 @@ export default class Section extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: this.props.title,
-            color: this.props.color
+            title: this.props.title
         }
 
     }
 
     render() {
         return (
-            <div style={{ backgroundColor: this.state.color }}>
+            <div className='section'>
                 <h1>{this.state.title}</h1>
             </div>
         )

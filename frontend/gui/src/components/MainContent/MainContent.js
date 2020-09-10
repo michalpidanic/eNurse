@@ -18,25 +18,16 @@ export default class MainContent extends Component {
                 "Predpis liekov",
                 "Objednať sa",
                 "Oznamy"
-            ],
-            sectionColors: [
-                "red",
-                "blue",
-                "green",
-                "black",
-                "yellow",
-                "orange",
-                "lightblue"
             ]
         }
     }
 
     render() {
 
-        const sections = this.state.sectionNames.map((name) => (<Section title={name} color='blue' />))
+        const sections = this.state.sectionNames.map((name) => (<Section title={name} />))
 
         return (
-            <div>
+            <div className='mainContent'>
                 {sections}
             </div>
         )
