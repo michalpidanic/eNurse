@@ -1,14 +1,12 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework import viewsets
 
 from announcement.models import Announcement
 from .serializers import AnnouncementsSerializer
 
 
-class AnnouncementListView(ListAPIView):
-    queryset = Announcement.objects.all()
+class AnnouncementViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing and editing user instances.
+    """
     serializer_class = AnnouncementsSerializer
-
-
-class AnnouncementDetailView(RetrieveAPIView):
     queryset = Announcement.objects.all()
-    serializer_class = AnnouncementsSerializer
