@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import './MainContent.scss'
 
 import Section from '../Section/Section'
-import Footer from '../Footer/Footer'
+import Announcement from '../Announcement/Announcement'
 
 export default class MainContent extends Component {
 
@@ -23,6 +24,12 @@ export default class MainContent extends Component {
         }
     }
 
+    // axios.get('http://127.0.0.1:8000/api/').then(
+    //     res => {
+    //         const annItem = () => <Announcement title={res.title} date={res.date} text={res.announcement} />
+    //     })
+
+
     render() {
 
         const sections = this.state.sectionNames.map((name) => (<Section title={name} />))
@@ -30,7 +37,6 @@ export default class MainContent extends Component {
         return (
             <div className='mainContent'>
                 {sections}
-                <Footer />
             </div>
         )
     }

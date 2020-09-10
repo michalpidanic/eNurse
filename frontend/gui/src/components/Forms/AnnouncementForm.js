@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import axios from 'axios'
 
-class AnnouncementForm extends Component {
+export default class AnnouncementForm extends Component {
     constructor(props) {
         super(props)
 
@@ -63,5 +63,3 @@ class AnnouncementForm extends Component {
         )
     }
 }
-
-export default AnnouncementForm
