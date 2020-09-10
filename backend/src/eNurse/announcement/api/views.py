@@ -9,6 +9,6 @@ class AnnouncementListView(ListAPIView):
     serializer_class = AnnouncementsSerializer
 
 
-# class AnnouncementDetailView(RetrieveAPIView):
-#    queryset = Announcement.objects.all()
-#    serializer_class = AnnouncementsSerializer
+class AnnouncementDetailView(RetrieveAPIView):
+    queryset = Announcement.objects.all()
+    serializer_class = AnnouncementsSerializer
