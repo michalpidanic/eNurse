@@ -9,7 +9,9 @@ export default class Header extends Component {
     render() {
         return (
             <div className='header'>
-                <Logo className='logo' />
+                <div className='logoContainer'>
+                    <Logo className='logo' />
+                </div>
                 <Navbar />
             </div>
         )
