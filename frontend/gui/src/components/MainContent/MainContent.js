@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './MainContent.scss'
 
 import Section from '../Section/Section'
+import Footer from '../Footer/Footer'
 
 export default class MainContent extends Component {
 
@@ -29,6 +30,7 @@ export default class MainContent extends Component {
         return (
             <div className='mainContent'>
                 {sections}
+                <Footer />
             </div>
         )
     }
