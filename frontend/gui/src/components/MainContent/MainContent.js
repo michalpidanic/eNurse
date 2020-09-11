@@ -20,14 +20,18 @@ export default class MainContent extends Component {
                 "Predpis liekov",
                 "Objednať sa",
                 "Oznamy"
-            ]
+            ],
+            obj: {}
         }
     }
 
-    // axios.get('http://127.0.0.1:8000/api/').then(
-    //     res => {
-    //         const annItem = () => <Announcement title={res.title} date={res.date} text={res.announcement} />
-    //     })
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8000/api/1').then(
+            res => {
+                this.setState(this.state.obj = res)
+            })
+    }
+
 
 
     render() {
@@ -37,6 +41,7 @@ export default class MainContent extends Component {
         return (
             <div className='mainContent'>
                 {sections}
+                <p>{this.state.obj.data.title}</p>
             </div>
         )
     }
