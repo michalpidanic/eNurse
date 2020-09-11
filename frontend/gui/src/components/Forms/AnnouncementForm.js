@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import axios from 'axios'
 
+import './Forms.scss'
+
 export default class AnnouncementForm extends Component {
     constructor(props) {
         super(props)
@@ -44,7 +46,7 @@ export default class AnnouncementForm extends Component {
                     name='title'
                     placeholder='Názov'
                     onChange={this.onChange}
-                /> <br />
+                />
                 <input
                     type='text'
                     name='announcement'
@@ -57,10 +59,11 @@ export default class AnnouncementForm extends Component {
                     name='date'
                     onChange={this.onChange}
 
-                /><br />
+                />
                 <input
                     type='text'
                     name='id'
+                    placeholder='ID'
                     onChange={this.onChange}
 
                 /><br />
@@ -70,13 +73,11 @@ export default class AnnouncementForm extends Component {
                     <option value="post">Pridať</option>
                     <option value="delete">Zmazať</option>
                     <option value="put">Upraviť</option>
-                </select>
+                </select><br />
                 <button type='submit'>
                     Vytvoriť
                 </button>
             </form>
-
-
         )
     }
 }
