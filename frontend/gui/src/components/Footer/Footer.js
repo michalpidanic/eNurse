@@ -15,6 +15,12 @@ class Footer extends Component {
                 <div>
                     <AnnouncementForm />
                 </div>
+                <div>
+                    <p><a>Random</a></p>
+                    <p><a>odkazy</a></p>
+                    <p><a>na nejake</a></p>
+                    <p><a>stranky nase</a></p>
+                </div>
 
             </footer>
         )

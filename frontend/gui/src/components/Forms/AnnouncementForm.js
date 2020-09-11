@@ -14,7 +14,7 @@ export default class AnnouncementForm extends Component {
             'date': "",
             'author': "Pani Doktorka",
             'id': "",
-            'request_type': ""
+            'request_type': "post"
         }
 
         this.onSubmit = this.onSubmit.bind(this)
@@ -23,10 +23,19 @@ export default class AnnouncementForm extends Component {
 
     onSubmit(event) {
 
-        const title = event.target.elements.title.value;
-        event.preventDefault();
-        /*axios.post('http://127.0.0.1:8000/api/',
-            this.state)*/
+        console.log(this.state.request_type)
+        event.preventDefault()
+
+        switch (this.state.request_type) {
+            case 'post':
+                axios.post('http://127.0.0.1:8000/api/',
+                    this.state)
+            case 'delete':
+                axios.delete('http://127.0.0.1:8000/api/' + this.state.id + '/')
+            case 'put':
+                axios.put('http://127.0.0.1:8000/api/' + this.state.id + '/',
+                    this.state)
+        }
 
         console.log(this.state)
 
@@ -47,13 +56,13 @@ export default class AnnouncementForm extends Component {
                     placeholder='Názov'
                     onChange={this.onChange}
                 />
-                <input
-                    type='text'
-                    name='announcement'
-                    placeholder='Oznam'
-                    onChange={this.onChange}
-
-                /><br />
+                <select
+                    name="request_type"
+                    onChange={this.onChange}>
+                    <option value="post">Pridať</option>
+                    <option value="delete">Zmazať</option>
+                    <option value="put">Upraviť</option>
+                </select><br />
                 <input
                     type='date'
                     name='date'
@@ -67,13 +76,13 @@ export default class AnnouncementForm extends Component {
                     onChange={this.onChange}
 
                 /><br />
-                <select
-                    name="request_type"
-                    onChange={this.onChange}>
-                    <option value="post">Pridať</option>
-                    <option value="delete">Zmazať</option>
-                    <option value="put">Upraviť</option>
-                </select><br />
+                <textarea
+                    type='text'
+                    name='announcement'
+                    placeholder='Oznam'
+                    onChange={this.onChange}
+
+                /><br />
                 <button type='submit'>
                     Vytvoriť
                 </button>
