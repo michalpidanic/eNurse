@@ -22,24 +22,19 @@ export default class AnnouncementForm extends Component {
     }
 
     onSubmit(event) {
-
-        console.log(this.state.request_type)
-        event.preventDefault()
-
         switch (this.state.request_type) {
             case 'post':
                 axios.post('http://127.0.0.1:8000/api/',
                     this.state)
+                break
             case 'delete':
                 axios.delete('http://127.0.0.1:8000/api/' + this.state.id + '/')
+                break
             case 'put':
                 axios.put('http://127.0.0.1:8000/api/' + this.state.id + '/',
                     this.state)
+                break
         }
-
-        console.log(this.state)
-
-
     }
 
     onChange(event) {
