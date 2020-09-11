@@ -6,4 +6,4 @@ from announcement.models import Announcement
 class AnnouncementsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Announcement
-        fields = ['title', 'author', 'announcement', 'date']
+        fields = ['id', 'title', 'author', 'announcement', 'date']

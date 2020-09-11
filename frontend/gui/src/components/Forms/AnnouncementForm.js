@@ -21,7 +21,11 @@ export default class AnnouncementForm extends Component {
         this.onChange = this.onChange.bind(this)
     }
 
+
+
     onSubmit(event) {
+        event.preventDefault()
+        axios.get('http://127.0.0.1:8000/api/3').then(response => { console.log(response) })
         switch (this.state.request_type) {
             case 'post':
                 axios.post('http://127.0.0.1:8000/api/',
