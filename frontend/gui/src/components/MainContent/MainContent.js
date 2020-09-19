@@ -24,12 +24,7 @@ export default class MainContent extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/1').then(
-            res => {
-                this.setState(this.state.obj = res)
-            })
-    }
+
 
 
 
@@ -41,7 +36,6 @@ export default class MainContent extends Component {
             <div className='mainContent'>
                 <AnnouncementSection />
                 {sections}
-                <p>{this.state.obj.data.title}</p>
             </div>
         )
     }
