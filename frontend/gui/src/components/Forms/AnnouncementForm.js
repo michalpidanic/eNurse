@@ -13,8 +13,6 @@ export default class AnnouncementForm extends Component {
             'announcement': "",
             'date': "",
             'author': "Pani Doktorka",
-            'id': "",
-            'request_type': "post"
         }
 
         this.onSubmit = this.onSubmit.bind(this)
@@ -24,21 +22,8 @@ export default class AnnouncementForm extends Component {
 
 
     onSubmit(event) {
-        event.preventDefault()
-        axios.get('http://127.0.0.1:8000/api/3').then(response => { console.log(response) })
-        switch (this.state.request_type) {
-            case 'post':
-                axios.post('http://127.0.0.1:8000/api/',
-                    this.state)
-                break
-            case 'delete':
-                axios.delete('http://127.0.0.1:8000/api/' + this.state.id + '/')
-                break
-            case 'put':
-                axios.put('http://127.0.0.1:8000/api/' + this.state.id + '/',
-                    this.state)
-                break
-        }
+        axios.post('http://127.0.0.1:8000/api/',
+            this.state)
     }
 
     onChange(event) {
@@ -55,26 +40,13 @@ export default class AnnouncementForm extends Component {
                     placeholder='Názov'
                     onChange={this.onChange}
                 />
-                <select
-                    name="request_type"
-                    onChange={this.onChange}>
-                    <option value="post">Pridať</option>
-                    <option value="delete">Zmazať</option>
-                    <option value="put">Upraviť</option>
-                </select><br />
                 <input
                     type='date'
                     name='date'
                     onChange={this.onChange}
 
                 />
-                <input
-                    type='text'
-                    name='id'
-                    placeholder='ID'
-                    onChange={this.onChange}
-
-                /><br />
+                <br />
                 <textarea
                     type='text'
                     name='announcement'

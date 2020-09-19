@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import './MainContent.scss'
 
 import Section from '../Section/Section'
-import Announcement from '../Announcement/Announcement'
+import AnnouncementSection from '../AnnouncementSection/AnnouncementSection'
 
 export default class MainContent extends Component {
 
@@ -36,6 +35,7 @@ export default class MainContent extends Component {
 
         return (
             <div className='mainContent'>
+                <AnnouncementSection />
                 {sections}
             </div>
         )
